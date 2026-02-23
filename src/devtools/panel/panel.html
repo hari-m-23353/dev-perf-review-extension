@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Performance Review</title>
+  <link rel="stylesheet" href="../../../assets/styles/theme.css">
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <div class="panel">
+    <header class="panel__header">
+      <div class="panel__header-left">
+        <span class="panel__icon">⚡</span>
+        <h1 class="panel__title">Dev Performance Review</h1>
+        <span class="panel__version">v1.0.0</span>
+      </div>
+    </header>
+
+    <main class="panel__main">
+      <div class="panel__controls">
+        <button id="runReviewBtn" class="btn btn--primary">▶ Run Review</button>
+        <div id="statusArea" class="status-area" aria-live="polite"></div>
+      </div>
+
+      <div id="reportContainer" class="report-container" hidden>
+        <div id="scoreArea" class="score-area"></div>
+        <div id="cardsArea" class="cards-area"></div>
+        <div id="suggestionsArea" class="suggestions-area"></div>
+        <div class="export-area">
+          <button id="exportBtn" class="btn btn--secondary">⬇ Export Report (JSON)</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../../utils/constants.js"></script>
+  <script src="../../utils/messaging.js"></script>
+  <script src="../../utils/formatters.js"></script>
+  <script src="../components/report-card.js"></script>
+  <script src="../components/score-gauge.js"></script>
+  <script src="../components/suggestion-list.js"></script>
+  <script src="../../collectors/web-vitals.js"></script>
+  <script src="../../collectors/long-tasks.js"></script>
+  <script src="../../analyzers/score-engine.js"></script>
+  <script src="../../reporters/report-generator.js"></script>
+  <script src="../../reporters/suggestion-engine.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>

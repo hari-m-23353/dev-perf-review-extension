@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Dev Performance Review",
+  "version": "1.0.0",
+  "description": "Automated performance audit for developers",
+  "permissions": ["activeTab", "scripting", "debugger"],
+  "devtools_page": "src/devtools/devtools.html",
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content-script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    },
+    "default_title": "Dev Performance Review"
+  }
+}
