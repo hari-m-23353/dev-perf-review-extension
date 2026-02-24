@@ -16,16 +16,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         }
       });
     });
-    return true;
   }
 
   if (message.type === 'REVIEW_COMPLETE') {
     chrome.runtime.sendMessage({ type: 'REVIEW_COMPLETE', data: message.data });
-    return true;
   }
 
   if (message.type === 'REVIEW_ERROR') {
     chrome.runtime.sendMessage({ type: 'REVIEW_ERROR', data: message.data });
-    return true;
   }
 });

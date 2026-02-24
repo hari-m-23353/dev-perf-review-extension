@@ -148,7 +148,7 @@
   }
 
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.type !== 'START_REVIEW') return;
+    if (message.type !== 'START_REVIEW') return false;
 
     const webVitals = new WebVitalsCollector();
     const longTasks = new LongTasksCollector();
@@ -156,6 +156,8 @@
 
     webVitals.start();
     longTasks.start();
+
+    sendResponse({});
 
     setTimeout(() => {
       webVitals.stop();
